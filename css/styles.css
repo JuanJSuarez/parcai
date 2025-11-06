@@ -1,0 +1,155 @@
+:root {
+    --color-primary: #1A2A47;   /* Azul Mágico Oscuro */
+    --color-secondary: #B0CEE0;  /* Tu Azul Claro */
+    --color-accent: #F9C043;    /* Dorado de la Gracia */
+    --color-text: #212529;      /* Texto oscuro */
+    --color-bg-light: #F8F9FA;  /* Fondo claro */
+}
+
+/* Requisito: Scroll Suave  */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Cinzel', serif;
+}
+/* =======================
+     1. NAVBAR
+=========================== */
+#main-navbar {
+    /* Aplicamos el color primario  */
+    background-color: var(--color-primary) !important; 
+}
+
+/* Estilos para que los enlaces se vean bien en el fondo oscuro */
+#main-navbar .nav-link,
+#main-navbar .navbar-brand {
+    color: #ffffff; /* Texto blanco */
+}
+
+#main-navbar .nav-link:hover {
+    color: var(--color-accent); /* Color acento (dorado) al pasar el mouse */
+}
+
+.hero-section {
+    /* ¡IMPORTANTE! 
+      Cambia la URL por la ruta a tu imagen de Elden Ring.
+    */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/elden.png') no-repeat center center;
+    
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Altura mínima de 100% de la pantalla */
+}
+
+/* Estilo para el botón de acento 
+  Usamos las variables de color que definimos [cite: 111-117]
+*/
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-text); /* Texto oscuro para buen contraste [cite: 122] */
+    font-weight: bold;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+.btn-accent:hover {
+    background-color: #e0ac3c; /* Un dorado un poco más oscuro */
+    color: var(--color-text);
+}
+
+/* =======================
+     3. SECCIÓN TRABAJOS (CARDS)
+=========================== */
+
+/* El efecto hover requerido por el PDF [cite: 51] */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px); /* [cite: 55] */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* [cite: 56] */
+}
+
+/* Un pequeño ajuste para que los card-footers se vean limpios */
+.card-footer {
+    background-color: #ffffff;
+    border-top: none;
+}
+/* =======================
+     4. GALERÍA (CAROUSEL)
+=========================== */
+
+.carousel {
+    border-radius: 15px;
+    overflow: hidden; /* Necesario para que las imágenes respeten el borde redondeado */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Opcional: Capa oscura sobre las imágenes del carrusel para que el texto resalte */
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+}
+
+/* =======================
+     5. SECCIÓN SOBRE MÍ
+=========================== */
+#nosotros .lead {
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+/* =======================
+     6. FORMULARIO DE CONTACTO
+=========================== */
+
+.contact-card .card-header {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-family: 'Cinzel', serif;
+    padding: 1.2rem;
+}
+
+/* =======================
+     7. FOOTER
+=========================== */
+
+#main-footer {
+    background-color: var(--color-primary); /* Fondo oscuro  */
+    color: #ffffff;
+}
+
+#main-footer h5 {
+    font-family: 'Cinzel', serif;
+    color: var(--color-accent); /* Títulos en dorado */
+}
+
+/* Estilos para los enlaces del footer */
+#main-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#main-footer a:hover {
+    color: var(--color-accent); /* Acento dorado al pasar el mouse */
+}
+
+/* Color del borde superior del copyright */
+#main-footer .border-top {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
